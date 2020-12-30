@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="transform-panel">
+		<div class="transform-align transform-block">
+			<p>Align:</p>
+			<div class="transform-align--first">
+				<button><img src="assets/icons/align1.svg" alt=""></button>
+				<button><img src="assets/icons/align2.svg" alt=""></button>
+				<button><img src="assets/icons/align3.svg" alt=""></button>
+			</div>
+			<div class="transform-align--second">
+				<button><img src="assets/icons/align4.svg" alt=""></button>
+				<button><img src="assets/icons/align5.svg" alt=""></button>
+				<button><img src="assets/icons/align6.svg" alt=""></button>
+			</div>
+		</div>
+		<div class="transform-distribute transform-block">
+			<p>Distribute:</p>
+			<div class="transform-align--first">
+				<button><img src="assets/icons/distribute1.svg" alt=""></button>
+				<button><img src="assets/icons/distribute2.svg" alt=""></button>
+				<button><img src="assets/icons/distribute3.svg" alt=""></button>
+			</div>
+			<div class="transform-align--second">
+				<button><img src="assets/icons/distribute4.svg" alt=""></button>
+				<button><img src="assets/icons/distribute5.svg" alt=""></button>
+				<button><img src="assets/icons/distribute6.svg" alt=""></button>
+			</div>
+		</div>
+		<div class="transform-distributes">
+			<div class="transform-distribute--first transform-block">
+				<p>Distribute Spacing:</p>
+				<div class="transform-distribute__box">
+					<button><img src="assets/icons/distributes1.svg" alt=""></button>
+					<button><img src="assets/icons/distributes2.svg" alt=""></button>
+				</div>
+			</div>
+			<div class="transform-distribute--second transform-block">
+				<p>Align to:</p>
+				<div class="transform-distribute__box align__box">
+					<!-- <label for="align-to-selection" class="align-to"><input type="radio" id="align-to-selection" name="alignto">Selection</label>
+					<label for="align-to-canvas" class="align-to"><input type="radio" id="align-to-canvas" name="alignto">Canvas</label> -->
+					<button class="align-to">Selection</button>
+					<button class="align-to">Canvas</button>
+				</div>
+			</div>
+		</div>
+		<div class="transform-options">
+			<div class="transform-rotate">
+				<p>Rotate:</p>
+				<img src="assets/icons/rotate1.svg" alt="">
+				<input type="number" max="4">
+				<img src="assets/icons/rotate2.svg" alt="">
+			</div>
+			<div class="transform-square">
+				<input type="checkbox" id="transform-squares-checkbox">
+				<div class="transform-squares" id="transform-squares">
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+					<button class="square-item"></button>
+				</div>
+			</div>
+			<div class="transform-rotates">
+				<button>180˚</button>
+				<button>90˚ CW</button>
+				<button>90˚ CCW</button>
+			</div>
+		</div>
+		<div class="transform-flip">
+			<p>Flip:</p>
+			<button>Horizontal</button><button>Vertical</button>
+		</div>
+		<div class="transform-link">
+			<a href="https://google.com/" target="_blank">
+				<img src="assets/icons/link.svg" alt="">
+				Get Extended Transform Panel
+			</a>
+		</div>
+	</div>
+	<script>
+		// radio
+		const container = document.querySelector('.align__box');
+		container.addEventListener('click', function(e) {
+			const items = document.querySelectorAll('.align-to');
+			const target = e.target;
+		  Array.from(items).forEach(item => {
+		  	item.classList.remove('align-to--active');
+		  });
+		  target.classList.add('align-to--active');
+		});
+		// squares
+		const check = document.getElementById('transform-squares-checkbox');
+		check.addEventListener('click', function(e){
+
+			const squareContainer = document.querySelector('.transform-squares');
+			const squares = document.getElementById('transform-squares');
+			if (check.checked) {
+				squares.classList.add('transform-squares--active');
+				squareContainer.addEventListener('click', function(e) {
+					const squareItems = document.querySelectorAll('.square-item');
+					const sqtarget = e.target;
+				  Array.from(squareItems).forEach(item => {
+				  	item.classList.remove('square--active');
+				  });
+				  sqtarget.classList.add('square--active');
+				});
+			}
+			else {
+				squares.classList.remove('transform-squares--active');
+				if (document.getElementsByClassName('transform-squares--active')) {
+					const squareItems = document.querySelectorAll('.square-item');
+					Array.from(squareItems).forEach(item => {
+						item.classList.remove('square--active');
+					});
+				}
+				squareContainer.addEventListener('click', function(e) {
+					const squareItems = document.querySelectorAll('.square-item');
+				  Array.from(squareItems).forEach(item => {
+				  	item.classList.remove('square--active');
+				  });
+				});
+			}
+		});
+		// degrees
+	</script>
+</body>
+</html>

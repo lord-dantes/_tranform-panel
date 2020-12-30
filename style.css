@@ -1,0 +1,285 @@
+@font-face{
+	font-family: 'Tahoma';
+	src: url('assets/fonts/Tahoma.ttf');
+}
+*{
+	font-family: 'Tahoma';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 12px;
+	color: var(--G1-white);
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+button{
+	cursor: pointer;
+}
+:root{
+	--G1-white: #F0F0F0;
+	--G1-gray: #535353;
+	--G2-gray: #454545;
+	--G3-gray: #383838;
+	--G4-border-gray: #676767;
+}
+/*  */
+.transform-panel{
+	max-width: 296px;
+	background: var(--G1-gray);
+}
+.transform-align, .transform-distribute{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border-bottom: solid 1px var(--G3-gray);
+	padding: 8px 0px 11px;
+	margin: 0 7px;
+}
+.transform-block p:first-child{
+	width: 100%;
+	margin: 0 0 13px 0;
+	padding: 0 0 0 4px;
+}
+.transform-align--first button, .transform-align--second button, .transform-distribute__box button{
+	width: 33px;
+	height: 34px;
+	border: 0;
+	border-radius: 2px;
+	background: transparent;
+	border: 1px solid transparent;
+}
+.transform-align--first button:hover, .transform-align--second button:hover, .transform-distribute__box button:hover{
+	border-color: var(--G4-border-gray);
+}
+.transform-align--first button:focus, .transform-align--second button:focus, .transform-distribute__box button:focus{
+	outline: 0;
+	border-color: var(--G4-border-gray);
+	background: var(--G2-gray);
+}
+.transform-align--first button, .transform-distribute__box button{
+	margin: 0 11px 0 0;
+}
+.transform-align--second button{
+	margin: 0 0 0 11px;
+}
+.transform-distribute, .transform-distributes{
+	padding: 13px 0 11px 0;
+}
+.transform-distributes{
+	display: flex;
+	margin: 0 7px;
+	justify-content: space-between;
+	border-bottom: solid 1px var(--G3-gray);
+}
+.transform-distribute__box{
+	display: flex;
+	width: 110px;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.transform-distribute--second{
+	padding: 0 13px 0 0;
+}
+.transform-distribute__box input{
+	width: 0;
+	height: 0;
+}
+.align__box button{
+	margin: 0;
+}
+.align__box button:first-child{
+	width: 61px;
+	height: 21px;
+	border: 1px solid var(--G4-border-gray);
+	border-radius: 2px 0px 0px 2px;
+	display: flex;
+	align-items: center;
+	padding: 3px 5px 6px 7px;
+}
+.align__box button:last-child{
+	width: 51px;
+	height: 21px;
+	border: 1px solid var(--G4-border-gray);
+	border-left: 0;
+	border-radius: 0px 2px 2px 0px;
+	display: flex;
+	align-items: center;
+	padding: 3px 3px 6px 6px;
+}
+.align__box button.align-to--active{
+	background: var(--G3-gray);
+}
+.transform-options{
+	margin: 0 6px;
+	padding: 11px 0 14px;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: solid 1px var(--G3-gray);
+}
+.transform-rotate{
+	display: flex;
+	margin: 0 auto 18px 0;
+	align-items: f
+	lex-end;
+}
+.transform-rotate input::-webkit-outer-spin-button,
+.transform-rotate input::-webkit-inner-spin-button {
+   -webkit-appearance: none;  
+}
+.transform-rotate p{
+	margin: 0 16px 0 0;
+}
+.transform-rotate img:nth-child(2){
+	margin: 0 5px 4px 0;
+}
+.transform-rotate input{
+	width: 57px;
+	height: 21px;
+	background: #454545;
+	border: 1px solid var(--G4-border-gray);
+	box-sizing: border-box;
+	border-radius: 2px;
+	padding: 4px 5px;
+}
+.transform-rotate input:focus{
+	outline: 0;
+}
+.transform-rotate img:nth-child(4){
+	margin: 0 0 9px 6px;
+}
+.transform-square{
+	display: flex;
+	margin: 0 50px 18px 0;
+	justify-content: flex-start;
+	align-items: center;
+}
+.transform-square > input{
+	margin-right: 9px;
+}
+.transform-squares{
+	width: 24px;
+	height: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.transform-squares button{
+	border: 0;
+	position: relative;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+}
+.transform-squares button:focus{
+	outline: 0;
+}
+.transform-squares--active button.square--active::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 6px;
+	height: 6px;
+	background: var(--G1-white);
+}
+.transform-squares button:nth-child(1){
+	width: 9px;
+	height: 9px;
+	background: url('assets/icons/squares1.svg');
+}
+.transform-squares button:nth-child(2){
+	width: 6px;
+	height: 9px;
+	background: url('assets/icons/squares2.svg');
+}
+.transform-squares button:nth-child(3){
+	width: 9px;
+	height: 9px;
+	background: url('assets/icons/squares1.svg');
+	transform: rotate(90deg);
+}
+.transform-squares button:nth-child(n+4){
+	width: 9px;
+	height: 6px;
+	background: url('assets/icons/squares2.svg');
+}
+.transform-squares button:nth-child(5){
+	width: 6px;
+	background: #797979;
+}
+.transform-squares button:nth-child(6){
+	background-position: right;
+}
+.transform-squares button:nth-child(6)::before{
+	top: 0;
+	right: 0;
+	left: unset;
+}
+.transform-squares button:nth-child(7){
+	width: 9px;
+	height: 9px;
+	background: url('assets/icons/squares1.svg');
+	transform: rotate(-90deg);
+}
+.transform-squares button:nth-child(8){
+	width: 6px;
+	height: 9px;
+	background: url('assets/icons/squares2.svg');
+	background-position: bottom;
+}
+.transform-squares button:nth-child(8)::before{
+	top: unset;
+	right: 0;
+	bottom: 0;
+}
+.transform-squares--active button:nth-child(5){
+	background: url('assets/icons/squares2.svg');
+}
+.transform-squares button:nth-child(9){
+	width: 9px;
+	height: 9px;
+	background: url('assets/icons/squares1.svg');
+	transform: rotate(-180deg);
+}
+.transform-rotates{
+	width: 100%;
+}
+.transform-rotates button, .transform-flip button{
+	padding: 10px 13px;
+	background: #535353;
+	margin: 0 20px 0 0;
+	border: 1px solid var(--G4-border-gray);
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+.transform-rotates button:first-child{
+	padding: 10px 7px;
+}
+.transform-rotates button:focus, .transform-flip button:focus{
+	outline: 0;
+}
+.transform-flip{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: solid 1px var(--G3-gray);
+	padding: 7px 10px 18px;
+}
+.transform-flip p{
+	margin: 0 13px 0 0;
+}
+.transform-link{
+	padding: 8px 11px 6px;
+}
+.transform-link a{
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+}
+.transform-link a img{
+	margin-right: 9px;
+}
+.transform-link a:hover{
+	color: #75A9C8;
+}
